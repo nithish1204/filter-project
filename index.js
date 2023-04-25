@@ -117,10 +117,10 @@ const setPrices = () => {
   priceRange.min = minPrice;
   priceRange.max = maxPrice;
   priceRange.value = maxPrice;
-  priceValue.innerHTML = "₹" + maxPrice;
+  priceValue.innerHTML = "$" + maxPrice;
 
   priceRange.addEventListener("input", (e) => {
-    priceValue.innerHTML = "₹" + e.target.value;
+    priceValue.innerHTML = "$" + e.target.value;
     displayProducts(data.filter((item) => item.price <= e.target.value));
   });
 };
