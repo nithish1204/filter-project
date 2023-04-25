@@ -120,7 +120,7 @@ const setPrices = () => {
   priceValue.innerHTML = "₹" + maxPrice;
 
   priceRange.addEventListener("input", (e) => {
-    priceValue.innerHTML = "$" + e.target.value;
+    priceValue.innerHTML = "₹" + e.target.value;
     displayProducts(data.filter((item) => item.price <= e.target.value));
   });
 };
