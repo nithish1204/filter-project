@@ -1,5 +1,20 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #202124;
+  --bg-alt-2: #f0f0f0;
+  --sun: url(icons/sun.png);
+}
+
+:root.dark-mode {
+  --primary-color: #202124;
+  --secondary-color: #fff;
+  --bg-alt-2: #333;
+  --moon: url(icons/moon.png);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+  background: var(--primary-color);
 }
 
 .container {
@@ -9,6 +24,7 @@ body {
 
 .leftMenu {
   flex: 1;
+  color: var(--secondary-color);
 }
 
 .search {
@@ -32,6 +48,7 @@ body {
 
 .content {
   flex: 4;
+  color: var(--secondary-color);
 }
 
 .products {
@@ -61,4 +78,37 @@ img:hover {
 
 .name {
   font-weight: 300;
+}
+
+#color-mode {
+  background: var(--bg-alt-2);
+  height: 2.75rem;
+  width: 4rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+#toggle-button {
+  background-image: var(--sun);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.dark-mode #toggle-button {
+  background-image: var(--moon);
+}
+
+.dark-mode #color-mode {
+  justify-content: flex-end;
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
 }

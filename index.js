@@ -2,42 +2,48 @@ const data = [
   {
     id: 1,
     name: "Invicta Men's Pro Diver",
-    img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
+    // img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
+    img: "icons/watch1.png",
     price: 74,
-    cat: "Dress",
-  },
-  {
-    id: 11,
-    name: "Invicta Men's Pro Diver 2",
-    img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
-    price: 74,
-    cat: "Dress",
+    cat: "All",
   },
   {
     id: 2,
+    name: "Invicta Men's Pro Diver 2",
+    // img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
+    img: "icons/watch1.png",
+    price: 74,
+    cat: "Dress",
+  },
+  {
+    id: 3,
     name: "Timex Men's Expedition Scout ",
-    img: "https://m.media-amazon.com/images/I/91WvnZ1g40L._AC_UY879_.jpg",
+    // img: "https://m.media-amazon.com/images/I/91WvnZ1g40L._AC_UY879_.jpg",
+    img: "icons/watch2.png",
     price: 40,
     cat: "Sport",
   },
   {
-    id: 3,
+    id: 4,
     name: "Breitling Superocean Heritage",
-    img: "https://m.media-amazon.com/images/I/61hGDiWBU8L._AC_UY879_.jpg",
+    // img: "https://m.media-amazon.com/images/I/61hGDiWBU8L._AC_UY879_.jpg",
+    img: "icons/watch3.png",
     price: 200,
     cat: "Luxury",
   },
   {
-    id: 4,
+    id: 5,
     name: "Casio Classic Resin Strap ",
-    img: "https://m.media-amazon.com/images/I/51Nk5SEBARL._AC_UY879_.jpg",
+    // img: "https://m.media-amazon.com/images/I/51Nk5SEBARL._AC_UY879_.jpg",
+    img: "icons/watch4.png",
     price: 16,
     cat: "Sport",
   },
   {
     id: 5,
     name: "Garmin Venu Smartwatch ",
-    img: "https://m.media-amazon.com/images/I/51kyjYuOZhL._AC_SL1000_.jpg",
+    // img: "https://m.media-amazon.com/images/I/51kyjYuOZhL._AC_SL1000_.jpg",
+    img: "icons/watch5.png",
     price: 74,
     cat: "Casual",
   },
@@ -84,14 +90,18 @@ searchInput.addEventListener("keyup", (e) => {
 const setCategories = () => {
   const allCats = data.map((item) => item.cat);
 
-  const categories = [
-    "All",
-    ...allCats.filter((item, i) => {
-      return allCats.indexOf(item) == i;
-    }),
-  ];
+  // const categories = [
+  //   "All",
+  //   ...allCats.filter((item, i) => {
+  //     return allCats.indexOf(item) == i;
+  //   }),
+  // ];
 
-  categoriesContainer.innerHTML = categories
+  // or
+
+  // const categories = [...allCats];
+
+  categoriesContainer.innerHTML = allCats
     .map(
       (cat) =>
         `
@@ -109,6 +119,8 @@ const setCategories = () => {
   });
 };
 
+setCategories();
+
 const setPrices = () => {
   const priceList = data.map((item) => item.price);
   const minPrice = Math.min(...priceList);
@@ -125,5 +137,4 @@ const setPrices = () => {
   });
 };
 
-setCategories();
 setPrices();
