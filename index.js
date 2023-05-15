@@ -4,7 +4,7 @@ const data = [
     name: "Invicta Men's Pro Diver",
     // img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
     img: "icons/watch1.png",
-    price: 74,
+    price: 900,
     cat: "All",
   },
   {
@@ -12,7 +12,7 @@ const data = [
     name: "Invicta Men's Pro Diver 2",
     // img: "https://m.media-amazon.com/images/I/71e04Q53xlL._AC_UY879_.jpg",
     img: "icons/watch1.png",
-    price: 74,
+    price: 900,
     cat: "Dress",
   },
   {
@@ -20,7 +20,7 @@ const data = [
     name: "Timex Men's Expedition Scout ",
     // img: "https://m.media-amazon.com/images/I/91WvnZ1g40L._AC_UY879_.jpg",
     img: "icons/watch2.png",
-    price: 40,
+    price: 659,
     cat: "Sport",
   },
   {
@@ -28,7 +28,7 @@ const data = [
     name: "Breitling Superocean Heritage",
     // img: "https://m.media-amazon.com/images/I/61hGDiWBU8L._AC_UY879_.jpg",
     img: "icons/watch3.png",
-    price: 200,
+    price: 849,
     cat: "Luxury",
   },
   {
@@ -36,7 +36,7 @@ const data = [
     name: "Casio Classic Resin Strap ",
     // img: "https://m.media-amazon.com/images/I/51Nk5SEBARL._AC_UY879_.jpg",
     img: "icons/watch4.png",
-    price: 16,
+    price: 249,
     cat: "Sport",
   },
   {
@@ -44,7 +44,7 @@ const data = [
     name: "Garmin Venu Smartwatch ",
     // img: "https://m.media-amazon.com/images/I/51kyjYuOZhL._AC_SL1000_.jpg",
     img: "icons/watch5.png",
-    price: 74,
+    price: 799,
     cat: "Casual",
   },
 ];
@@ -66,7 +66,7 @@ const displayProducts = (filteredProducts) => {
           alt=""
           />
           <span class="name">${product.name}</span>
-          <span class="priceText">$${product.price}</span>
+          <span class="priceText">₹${product.price}</span>
         </div>
   `
     )
@@ -129,10 +129,10 @@ const setPrices = () => {
   priceRange.min = minPrice;
   priceRange.max = maxPrice;
   priceRange.value = maxPrice;
-  priceValue.innerHTML = "$" + maxPrice;
+  priceValue.innerHTML = "₹" + maxPrice;
 
   priceRange.addEventListener("input", (e) => {
-    priceValue.innerHTML = "$" + e.target.value;
+    priceValue.innerHTML = "₹" + e.target.value;
     displayProducts(data.filter((item) => item.price <= e.target.value));
   });
 };
